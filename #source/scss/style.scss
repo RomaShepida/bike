@@ -1,0 +1,493 @@
+// импорт обнуляющих стилей
+@import "_nullstyle.scss";
+
+// импорт шрифтов
+@import "_fonts.scss";
+
+// импорт шаблонов
+@import "_templates.scss";
+
+// импорт переменных
+@import "_variables.scss";
+
+// глобальные стили
+body {
+    @extend %fontfamily-lato;
+    min-width: 1200px;
+}
+
+.wrapper-main {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-content {
+    flex: 1 1 auto;
+}
+
+.container {
+    width: 1080px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $color-title;
+    font-weight: 700;    
+}
+
+.text {
+    font-size: 16px;
+    line-height: 30px;
+    color: $color-text;
+    letter-spacing: -0.1px;
+}
+
+// header
+.header {
+    background-color: $color-bg;
+    background: url(/img/header/header-bg.jpg) 0 0/100% auto no-repeat;
+    height: 600px;
+
+    &-flexbody {
+
+        &__items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding-top: 35px;
+        }
+
+        &__item {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: $color-header-text;
+
+            a {
+                padding-left: 35px;
+                padding-right: 35px;
+                color: $color-title;
+
+                &:visited {
+                    color: $color-header-text;
+                }
+
+                &:hover {
+                    color: $color-hover;
+                    transition: .5s;
+                }
+            }
+
+            &:nth-child(1), &:nth-child(4)  {
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    height: 2px;
+                    width: 2px;
+                    border-radius: 50%;
+                    background-color: $color-header-text;
+                }
+            }
+        }
+    }
+}
+// /header
+
+// about
+.about {
+    background-color: $color-bg-grey;
+    text-align: center;
+    padding: 115px 0 140px 0;
+
+    &__icon {
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__text {
+    }
+}
+// /about
+
+// work
+.work {
+
+    &-grid-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 533px);
+        grid-template-rows: repeat(3, 600px);
+        grid-template-areas: 
+            "company company oliva"
+            "boriosa vintage vintage"
+            "bicycles hulot bicycles-right";
+
+        justify-content: center;
+    }
+
+    &-block {
+
+
+        &__company {
+            grid-area: company;
+            background: url(../img/work/company-bg.png) 0 0/100% no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        &__oliva {
+            grid-area: oliva;
+            background: url(../img/work/oliva-bg.jpg) 0 0/100% no-repeat;
+            text-align: center;
+
+            &-icon {
+                padding-top: 65px;
+                padding-bottom: 20px;
+            }
+
+            &-title {
+                padding-bottom: 20px;
+            }
+
+            &-text {
+                padding: 0 67px;
+                text-align: justify;
+
+                &::after {
+                    content: '';
+                    height: 1px;
+                    width: 50px;
+                    background-color: $color-line;
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 40px;
+                }
+            }
+        }
+
+        &__boriosa {
+            grid-area: boriosa;
+            background: url(../img/work/boriosa-bg.jpg) 0 0/100% no-repeat;
+            text-align: center;
+
+            &-icon {
+                padding-top: 70px;
+                padding-bottom: 25px;
+            }
+
+            &-title {
+                padding-bottom: 20px;
+            }
+
+            &-text {
+                padding: 0 67px;
+                text-align: justify;
+
+                &::after {
+                    content: '';
+                    height: 1px;
+                    width: 50px;
+                    background-color: $color-line;
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 40px;
+                }
+            }
+        }
+
+        &__vintage {
+            grid-area: vintage;
+            background: url(../img/work/vintage-bg.jpg) 0 0/100% no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        &__bicycles {
+            grid-area: bicycles;
+            background: url(../img/work/bicycles-bg1.jpg) 0 0/100% no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            &-right {
+                grid-area: bicycles-right;
+                background: url(../img/work/bicycles-bg2.jpg) 0 0/100% no-repeat;
+            }
+        }
+
+        &__hulot {
+            grid-area: hulot;
+            background: url(../img/work/hulot-bg.jpg) 0 0/100% no-repeat;
+            text-align: center;
+
+            &-icon {
+                padding-top: 70px;
+                padding-bottom: 25px;
+            }
+
+            &-title {
+                padding-bottom: 20px;
+            }
+
+            &-text {
+                padding: 0 67px;
+                text-align: justify;
+
+                &::after {
+                    content: '';
+                    height: 1px;
+                    width: 50px;
+                    background-color: $color-line;
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+}
+// /work
+
+// twitter
+.twitter {
+    background-color: $color-bg-grey;
+
+    &__wrapper {
+        width: 1100px;
+        padding: 120px 15px 65px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__logo {
+        margin-bottom: 40px;
+
+    }
+
+    &__title {
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+
+        span:first-child {
+            color: $color-title;
+            font-weight: 700;
+        }
+
+        span:last-child {
+            color: $color-text;
+        }
+    }
+
+    &__text {
+        margin-bottom: 100px;
+        color: $color-text;
+        font-style: italic;
+        font-size: 24px;
+        line-height: 34px;
+    }
+}
+// /twitter
+
+// shop
+.shop {
+    background-color: $color-bg-dark-blue;
+
+    &-grid-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 533px);
+        min-height: 534px;
+
+        justify-content: center;
+    }
+
+    &__block {
+        &-saddles {
+            display: grid;
+            grid-template-columns: repeat(2, 267px);
+            grid-auto-rows: 267px;
+        }
+
+        &-wheels {
+            display: grid;
+            grid-template-columns: repeat(2, 267px);
+            grid-auto-rows: 534px;
+        }
+
+        &-shop {
+            display: grid;
+            
+            grid-template-columns: repeat(2, 267px);
+            grid-auto-rows: 267px;
+            
+            &-img {
+                display: inline-block;
+
+                &:nth-child(1) {
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+
+                    &:hover {
+                        background: url(../img/shop/shop-main-hover.png);
+                        z-index: 999;
+                    }
+                }
+            }
+        }
+    }
+
+    &__button {
+        text-align: center;
+    }
+    
+
+
+}
+
+.button {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    background: transparent;
+    padding: 20px 67px;
+    border: 1px solid $color-button-border;
+    margin: 75px 0;
+
+    &:hover {
+        color: #5ca68d;
+        border: 1px solid #5ca68d;
+    }
+    
+}
+// /shop
+// mailing
+.mailing {
+    text-align: center;
+    
+    &__wrapper {
+        padding: 110px 5px;
+    }
+
+    &__logo {
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        color: $color-text;
+        margin-bottom: 40px;
+        font-size: 24px;
+        line-height: 34px;
+        font-style: italic;
+    }
+
+    &__form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__input {
+        border: 1px solid $color-border;
+        padding: 24px 28px 24px;
+        width: 400px;
+        font-size: 20px;
+        line-height: 20px;
+        color: $color-title;
+
+        &::placeholder {
+            font-size: 20px;
+            line-height: 24px;
+            font-style: italic;
+            color: #c8c8c8;
+        }
+    }
+
+    &__button {
+        padding: 25px 47px;
+        margin-left: 8px;
+        background-color: $color-button;
+
+        span {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+}
+// /mailing
+
+// footer
+.footer {
+    background-color: $color-bg-grey;
+
+    &__wrapper {
+        width: 1130px;
+        padding: 100px 15px;
+        margin: 0 auto;
+    }
+
+    &-flexblock {
+        display: flex;
+        justify-content: space-between;
+
+        &__adress {
+
+            &-title {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 18px;
+            }
+
+            &-text {
+                font-size: 14px;
+                font-style: italic;
+                line-height: 18px;
+            }
+        }
+
+        &__social {
+            display: flex;
+            align-items: center;
+
+            &-icon {
+                padding-right: 15px;
+
+                img {
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        &__author {
+            display: flex;
+            align-items: center;
+
+            font-size: 14px;
+            font-style: italic;
+            line-height: 18px;
+            align-items: center;
+
+            img {
+                padding: 0 10px;
+            }
+        }
+
+    }
+}
+// /footer
